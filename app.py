@@ -2,6 +2,9 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+# Убедитесь, что отключение CSRF защиты безопасно в данном контексте.
+# Например, в API, которое используется только через запросы с токенами.
+
 @app.route('/')
 def home():
     return jsonify(message="Hello, World!")
