@@ -28,5 +28,10 @@ pipeline {
                 }
             }
         }
+    stage("Vse zaebis") {
+      steps {
+        echo "Все пиздато"
+      }
+    }
   }
 }
