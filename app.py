@@ -10,10 +10,7 @@ def home():
 def data():
     return jsonify(data="Here is some data")
 
-@app.route('/user/<username>')
-def get_user(username):
-    query = f"SELECT * FROM users WHERE username = '{username}'"
-    return query
+
 
 
 if __name__ == '__main__':
