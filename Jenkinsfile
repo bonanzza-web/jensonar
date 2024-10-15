@@ -5,7 +5,7 @@ pipeline {
     stage('Test stage') {
       steps {
         sh 'ls -la'
-        sh 'python3 app.py'
+        sh 'cat app.py'
       }
     }
   }
