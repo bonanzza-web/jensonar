@@ -1,17 +1,6 @@
-from flask import Flask, jsonify
+import time
+import random
 
-app = Flask(__name__)
+randomint = random.randrange(3, 7)
 
-# Убедитесь, что отключение CSRF защиты безопасно в данном контексте.
-# Например, в API, которое используется только через запросы с токенами.
-
-@app.route('/')
-def home():
-    return jsonify(message="Hello, World!")
-
-@app.route('/api/data')
-def data():
-    return jsonify(data="Here is some data")
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+print(randomint)
