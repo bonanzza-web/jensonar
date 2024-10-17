@@ -38,7 +38,11 @@ pipeline {
       steps {
         script {
           sh """
-            ssh ${SRV_HOST_SSH} git clone ${APP_REPO} /home/unodostres/git-app && \
+            if [ ! -d /home/unodostres/git-app ] || [ -z "\$(ls -A /home/unodostres/git-app)" ]; then
+                ssh ${SRV_HOST_SSH} git clone ${APP_REPO} /home/unodostres/git-app
+              else
+                echo "Directory already exists and is not empty, skipping clone."
+              fi
             docker build ${SRV_WORKDIR} -t ebuchiytest
             """
         }
