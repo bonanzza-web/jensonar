@@ -1,7 +1,5 @@
 FROM python:3.9-slim
-RUN addgroup -S nonroot \
-    && adduser -S nonroot -G nonroot
-
+RUN addgroup -S nonroot && adduser -S nonroot -G nonroot
 USER nonroot
 WORKDIR /app
 COPY ./app.py /app
