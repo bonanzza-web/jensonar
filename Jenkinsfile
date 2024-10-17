@@ -37,7 +37,7 @@ pipeline {
       steps {
         script {
           sh """
-            ssh ${SRV_HOST_SSH} git clone ${APP_REPO} /home/unodostres/
+            ssh ${SRV_HOST_SSH} git clone ${APP_REPO} /home/unodostres/git-app
             """
         }
         
