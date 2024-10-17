@@ -30,7 +30,7 @@ pipeline {
         }
     stage("Build docker image") {
       steps {
-        sh 'ssh unodostres@192.168.0.14 -c whoami'
+        sh 'ssh unodostres@192.168.0.14 whoami'
       }
     }
   }
