@@ -1,6 +1,11 @@
 pipeline {
   agent any
-
+  environment {
+    SRV_HOST_SSH = 'unodostres@192.168.0.14'
+    APP_REPO = 'https://github.com/bonanzza-web/jensonar.git'
+    DOCKER_IMAGE_NAME = 'ebuchiytest'
+    DOCKER_IMAGE_TAG = 'latest'
+  }
   stages {
     stage('Test stage') {
       steps {
@@ -28,9 +33,16 @@ pipeline {
                 }
             }
         }
-    stage("Build docker image") {
+    stage("Git clone app") {
       steps {
-        sh 'ssh unodostres@192.168.0.14 whoami'
+        script {
+          sh """
+            ssh ${SRV_HOST_SSH} mkdir -p ~/git-app && \
+            cd ~/git-app && \
+            git clone ${APP_REPO}
+            """
+        }
+        
       }
     }
   }
