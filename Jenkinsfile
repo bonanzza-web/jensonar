@@ -38,7 +38,7 @@ pipeline {
       steps {
         script {
           sh """
-              ssh ${SRV_HOST_SSH} git pull ${SRV_WORKDIR} && docker build ${SRV_WORKDIR} -t ebuchiytest
+              ssh ${SRV_HOST_SSH} docker build ${SRV_WORKDIR} -t ebuchiytest
             """
         }
         
