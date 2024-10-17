@@ -3,6 +3,7 @@ pipeline {
   environment {
     SRV_HOST_SSH = 'unodostres@192.168.0.14'
     APP_REPO = 'https://github.com/bonanzza-web/jensonar.git'
+    SRV_WORKDIR = '/home/unodostres/git-app'
     DOCKER_IMAGE_NAME = 'ebuchiytest'
     DOCKER_IMAGE_TAG = 'latest'
   }
@@ -37,7 +38,8 @@ pipeline {
       steps {
         script {
           sh """
-            ssh ${SRV_HOST_SSH} git clone ${APP_REPO} /home/unodostres/git-app
+            ssh ${SRV_HOST_SSH} git clone ${APP_REPO} /home/unodostres/git-app && \
+            docker build ${SRV_WORKDIR} -t ebuchiytest
             """
         }
         
