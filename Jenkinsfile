@@ -38,7 +38,7 @@ pipeline {
         script {
           sh """
             ssh ${SRV_HOST_SSH} mkdir -p /home/unodostres/git-app && \
-            cd ~/git-app && \
+            cd /home/unodostres/git-app && \
             git clone ${APP_REPO}
             """
         }
