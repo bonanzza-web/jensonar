@@ -28,9 +28,9 @@ pipeline {
                 }
             }
         }
-    stage("Vse zaebis") {
+    stage("Build docker image") {
       steps {
-        echo "Все пиздато"
+        sh 'ssh unodostres@192.168.0.14 -c whoami'
       }
     }
   }
