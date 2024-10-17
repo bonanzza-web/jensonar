@@ -44,5 +44,10 @@ pipeline {
         
       }
     }
+    stage("Docker check") {
+      steps {
+        sh 'docker ps'
+      }
+    }
   }
 }
