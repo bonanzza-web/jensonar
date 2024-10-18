@@ -54,8 +54,7 @@ pipeline {
         ansibleAdhoc(
           installation: 'Ansible',
           inventory: 'ansible/inventory/hosts.txt',
-          module: 'ping',
-          args: ''
+          module: 'ping'
         )
       }
     }
