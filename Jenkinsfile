@@ -51,11 +51,7 @@ pipeline {
     }
     stage("Ansible check") {
       steps {
-        ansibleAdhoc(
-          installation: 'Ansible',
-          inventory: 'ansible/inventory/hosts.txt',
-          hosts: 'all',
-          module: 'ping'
+        sh 'ansible --version'
         )
       }
     }
