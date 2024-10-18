@@ -51,7 +51,7 @@ pipeline {
     }
     stage("Ansible check") {
       steps {
-        sh 'ansible --version'
+        sh 'ansible all -m ping -i ./inventory/hosts.txt'
       }
     }
   }
