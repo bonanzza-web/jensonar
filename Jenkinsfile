@@ -49,5 +49,15 @@ pipeline {
         sh 'docker ps'
       }
     }
+    stage("Ansible check") {
+      steps {
+        ansibleAdhoc(
+          installation: 'Ansible',
+          inventory: 'ansible/inventory/hosts.txt',
+          module: 'ping',
+          args: ''
+        )
+      }
+    }
   }
 }
