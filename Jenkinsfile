@@ -52,7 +52,6 @@ pipeline {
     stage("Ansible check") {
       steps {
         sh 'ansible --version'
-        )
       }
     }
   }
