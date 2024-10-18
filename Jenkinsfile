@@ -51,7 +51,7 @@ pipeline {
     }
     stage("Ansible check") {
       steps {
-        sh 'ansible all -m ping -i ./ansible/inventory/hosts.txt'
+        sh 'ansible all -m ping -i ./ansible/inventory/hosts.txt -u unodostres'
       }
     }
   }
