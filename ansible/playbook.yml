@@ -1,1 +1,9 @@
 ---
+- name: Test playbook
+  hosts: all
+  become: true
+  remote_user: unodostres
+
+  tasks:
+  - name: Test task
+    ansible.builtin.command: ls -la /home/unodostres
