@@ -54,5 +54,10 @@ pipeline {
         sh 'ansible all -m ping -i ./ansible/inventory/hosts.txt -u unodostres'
       }
     }
+     stage("Ansible playbook") {
+      steps {
+        sh 'ansible-playbook -i ./ansible/inventory/hosts.txt ./ansible/playbook.yml'
+      }
+    }
   }
 }
